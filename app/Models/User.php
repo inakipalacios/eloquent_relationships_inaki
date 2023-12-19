@@ -11,6 +11,9 @@ use Laravel\Sanctum\HasApiTokens;
 //1-1
 use App\Models\Address;
 
+//1-N
+use App\Models\Post;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -50,5 +53,10 @@ class User extends Authenticatable
     //1-1
     public function address(){
         return $this->hasOne(Address::class);
+    }
+
+    //1-N
+    public function posts(){
+        return $this->hasMany(Post::class);
     }
 }
