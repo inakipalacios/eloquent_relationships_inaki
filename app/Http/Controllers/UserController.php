@@ -28,4 +28,16 @@ class UserController extends Controller
         ]);
         return redirect()->route('user.index');
     }
+
+    public function edit($id){
+        $user = User::findOrFail($id);
+        return view('users.edit', ['user' => $user]);
+    }
+
+    public function destroy($id){
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('user.index');
+
+    }
 }

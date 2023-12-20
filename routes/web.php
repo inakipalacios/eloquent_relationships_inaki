@@ -23,3 +23,5 @@ Route::resource('example', ExampleController::class);
 
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 Route::post('/user', [UserController::class, 'store'])->name('user.store');
+Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');

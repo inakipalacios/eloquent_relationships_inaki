@@ -1,1 +1,4 @@
-<button type="button" class="btn btn-secondary">✏️ Edit</button>
+<form action="{{route('user.edit', ['id'=>$user->id])}}" method="get">
+    @csrf
+    <input type="submit" class="btn btn-secondary" value="✏️ Edit">
+</form>
