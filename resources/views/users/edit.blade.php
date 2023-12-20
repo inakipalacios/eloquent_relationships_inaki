@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="mt-4 d-flex justify-content-center">
-    <form class="w-50" action="" method="post">
+    <form class="w-50" action="{{route('user.update', ['id'=>$user->id])}}" method="post">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">

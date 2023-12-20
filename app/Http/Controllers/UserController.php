@@ -38,6 +38,16 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('user.index');
+    }
 
+    public function update(Request $request, $id){
+        $user = User::findOrFail($id);
+
+        $user->name = $request['name'];
+        $user->surname = $request['surname'];
+        $user->email = $request['email'];
+        $user->save();
+
+        return redirect()->route('user.index');
     }
 }
