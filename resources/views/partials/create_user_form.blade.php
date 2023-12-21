@@ -17,6 +17,6 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password">
             </div>
-            <input class="btn btn-primary" type="submit" value="Create user">
+        <input class="btn btn-primary" type="submit" value="+ Create user">
     </form>
 </div>
