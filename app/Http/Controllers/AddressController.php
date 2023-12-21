@@ -10,12 +10,20 @@ use App\Models\Address;
 class AddressController extends Controller
 {
     public function index(){
-        $users = User::all();
-        return view('address.index', ['users' => $users]);
+        //$users = User::all();
+        $users = User::doesntHave('address')->get();
+        $addresses = Address::all();
+        return view('address.index', ['users' => $users, 'addresses'=> $addresses]);
 
     }
 
     public function store(Request $request){
+        $request->validate([
+            'municipality' => 'required|string|max:50',
+            'street' => 'required|string|max:50',
+            'number' => 'required|integer',
+        ]);
+
         $municipality = $request['municipality'];
         $street = $request['street'];
         $number = $request['number'];
@@ -30,6 +38,29 @@ class AddressController extends Controller
             'user_id' => $user_id
         ]);
 
+        return redirect()->route('user.index');
+    }
+
+
+    public function edit($id){
+        $address =  Address::findOrFail($id);
+        return view('address.edit', ['address' => $address]);
+    }
+
+    public function update(Request $request, $id){
+        $address = Address::findOrFail($id);
+
+        $address->municipality = $request['municipality'];
+        $address->street = $request['street'];
+        $address->number = $request['number'];
+        $address->save();
+        
+        return redirect()->route('user.index');
+    }
+
+    public function destroy($id){
+        $address = Address::findOrFail($id);
+        $address->delete();
         return redirect()->route('user.index');
     }
 }

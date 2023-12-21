@@ -1,7 +1,7 @@
 <div class="mt-4 d-flex justify-content-center">
     <form class="w-50" action="{{route('address.store')}}" method="post">
         @csrf
-        <h3>Cambiar el action de este formulario</h3>
+        <h3>Assign address</h3>
             <div class="mb-3">
                 <label for="name" class="form-label">Municipality</label>
                 <input type="text" class="form-control" id="municipality" name="municipality">

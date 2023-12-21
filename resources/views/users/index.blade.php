@@ -27,12 +27,4 @@
         </tr>
     @empty
     @endforelse
-
-    <select name="users" id="users">
-        <option value="#">Select user</option>
-    @forelse($users as $user)
-        <option value="{{$user->id}}">{{$user->name}}</option>
-    @empty
-    @endforelse
-    </select>
 @endsection

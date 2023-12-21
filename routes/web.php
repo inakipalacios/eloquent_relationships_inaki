@@ -32,3 +32,8 @@ Route::put('/user/{id}', [UserController::class, 'update'])->name('user.update')
 //Address
 Route::get('/address', [AddressController::class, 'index'])->name('address.index');
 Route::post('/address', [AddressController::class, 'store'])->name('address.store');
+Route::get('/address/{id}/edit', [AddressController::class, 'edit'])->name('address.edit');
+Route::delete('/address/{id}', [AddressController::class, 'destroy'])->name('address.destroy');
+Route::put('/address/{id}', [AddressController::class, 'update'])->name('address.update');
+
+//Posts
