@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Address;
 
 class UserController extends Controller
 {
@@ -42,11 +43,15 @@ class UserController extends Controller
 
     public function update(Request $request, $id){
         $user = User::findOrFail($id);
+        $address = $user->address;
 
         $user->name = $request['name'];
         $user->surname = $request['surname'];
         $user->email = $request['email'];
         $user->save();
+        
+        $address->municipality = $request['municipality'];
+        $address->save();
 
         return redirect()->route('user.index');
     }
