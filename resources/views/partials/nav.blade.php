@@ -12,6 +12,12 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('address.index')}}">Addresses</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('subject.index')}}">Subjects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('post.index')}}">Posts</a>
+        </li>
       </ul>
     </div>
   </div>

@@ -12,9 +12,9 @@
         </tr>
     @forelse($addresses as $address)
         <tr>
-            <td>{{$address->municipality ?? ' '}}</td>
-            <td>{{$address->street ?? ' '}}</td>
-            <td>{{$address->number ?? ' '}}</td>
+            <td>{{$address->municipality}}</td>
+            <td>{{$address->street}}</td>
+            <td>{{$address->number}}</td>
             <td>@include('partials.address_edit_button')</td>
             <td>@include('partials.address_delete_button')</td>
         </tr>

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +38,19 @@ Route::get('/address/{id}/edit', [AddressController::class, 'edit'])->name('addr
 Route::delete('/address/{id}', [AddressController::class, 'destroy'])->name('address.destroy');
 Route::put('/address/{id}', [AddressController::class, 'update'])->name('address.update');
 
-//Posts
+//Subject
+Route::get('/subject', [SubjectController::class, 'index'])->name('subject.index');
+Route::post('/subject', [SubjectController::class, 'store'])->name('subject.store');
+Route::delete('/subject/{id}', [SubjectController::class, 'destroy'])->name('subject.destroy');
+Route::get('/subject/{id}/edit', [SubjectController::class, 'edit'])->name('subject.edit');
+Route::put('/subject/{id}', [SubjectController::class, 'update'])->name('subject.update');
+
+//Post
+Route::get('/post', [PostController::class, 'index'])->name('post.index');
+Route::post('/post', [PostController::class, 'store'])->name('post.store');
+Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+
+
+
+
+
