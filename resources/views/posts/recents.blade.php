@@ -1,12 +1,15 @@
 @extends('layouts.main')
 
 @section('content')
-@include('partials.post_create_form')
-
-    @forelse($posts as $post)
+@forelse($posts as $post)
     <div class="card mb-5 mt-5">
-        <div class="card-header">
-            {{ $post->user->name }}
+        <div class="card-header d-flex justify-content-between">
+            <div>
+                {{ $post->user->name }}
+            </div>
+            <div>
+                {{ $post->created_at }}
+            </div>
         </div>
         <div class="card-header d-flex flex-row justify-content-end">
             @forelse($post->subjects as $subject)

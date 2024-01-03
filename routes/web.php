@@ -18,9 +18,8 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserController::class, 'index'])->name('user.index');
+
 
 Route::resource('example', ExampleController::class);
 
@@ -49,6 +48,15 @@ Route::put('/subject/{id}', [SubjectController::class, 'update'])->name('subject
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::post('/post', [PostController::class, 'store'])->name('post.store');
 Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+Route::get('/post/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
+
+
+//Final ends
+Route::get('api/posts/recent', [PostController::class, 'recent_posts'])->name('post.recents');
+Route::get('/api/posts/{id}', [UserController::class, 'user_posts'])->name('user.posts');
+
+
 
 
 

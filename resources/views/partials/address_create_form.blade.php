@@ -1,4 +1,4 @@
-<div class="mt-4 d-flex justify-content-center">
+<div class="mt-4 text-align-center">
     <form class="w-50" action="{{route('address.store')}}" method="post">
         @csrf
         <h3>Assign address</h3>
