@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('title', 'Edit address')
+
+
 @section('content')
     <div class="mt-4 d-flex justify-content-center">
     <form class="w-50" action="{{route('address.update', ['id'=>$address->id])}}" method="post">

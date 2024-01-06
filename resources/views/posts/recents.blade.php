@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('title', 'Recent posts')
+
+
 @section('content')
 @forelse($posts as $post)
     <div class="card mb-5 mt-5">

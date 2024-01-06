@@ -37,8 +37,8 @@ class AddressController extends Controller
             'number' => $number,
             'user_id' => $user_id
         ]);
+        return redirect()->route('address.index')->with('success', 'Address created successfully');
 
-        return redirect()->route('user.index');
     }
 
 

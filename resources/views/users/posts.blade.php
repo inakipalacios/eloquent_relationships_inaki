@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('title', 'Users posts')
+
+
 @section('content')
 @forelse($user_posts as $post)
     <div class="card mb-3">

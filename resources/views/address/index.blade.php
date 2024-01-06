@@ -1,6 +1,13 @@
 @extends('layouts.main')
 
+@section('title', 'Addresses')
+
 @section('content')
+@if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     @include('partials.address_create_form')
     <table class="table table-striped mt-4">
         <tr>

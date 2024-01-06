@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('title', 'Subjects')
+
+
 @section('content')
     @include('partials.subject_create_form')
 
