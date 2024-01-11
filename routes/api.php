@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/**
+ * Ejemplo ruta api
+ */
+/*Route::get('articles/{id}', function ($id){
+    return Article::find($id);
+});*/
